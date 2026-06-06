@@ -3,61 +3,90 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Flower QR Surprise 💜</title>
+<title>For You 💜</title>
 
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- 📱 QR ACCESS SCREEN -->
+<!-- ================= QR SCREEN ================= -->
 <section id="qrScreen" class="screen active">
-  <div class="box">
+  <div class="box qr-box">
+    <h1>💜 Scan to Open Surprise</h1>
 
-    <h1>🌸 Scan to Unlock</h1>
+    <!-- QR IMAGE -->
+    <img src="qr.png" class="qr" alt="QR Code">
 
-    <!-- QR CODE IMAGE -->
-    <img src="qr.png" alt="QR Code" class="qr">
-
-    <p>Scan this QR to enter your surprise 💜</p>
-
+    <p>Scan this QR to continue 💜</p>
   </div>
 </section>
 
-<!-- 🌸 FLOWER CURTAIN -->
-<section id="curtain" class="curtain hidden">
+<!-- ================= MAIN SITE ================= -->
+<div id="site" class="hidden">
 
-  <h1>Tap to open the flower curtain 🌸</h1>
-
-  <div class="flowers">
-    <div class="flower">🌸</div>
-    <div class="flower">🌻</div>
-    <div class="flower">🌸</div>
-    <div class="flower">🌻</div>
-  </div>
-
+<!-- LANDING -->
+<section id="landing" class="screen active">
+  <h1>Hi my love 💜</h1>
+  <button onclick="go('letters')">Open Surprise</button>
 </section>
 
-<!-- 🌸 STORY -->
-<section id="scene" class="scene hidden">
+<!-- LETTERS -->
+<section id="letters" class="screen">
+  <h2>💌 Letters</h2>
 
-  <div id="step0" class="step active">
-    <h2>💜 Welcome my love</h2>
+  <div class="btns">
+    <button onclick="showLetter(0)">Letter 1</button>
+    <button onclick="showLetter(1)">Letter 2</button>
+    <button onclick="showLetter(2)">Letter 3</button>
   </div>
 
-  <div id="step1" class="step">
-    <p>A memory just for you ✨</p>
-  </div>
+  <div class="letter active">💜 You are my everything</div>
+  <div class="letter">💜 I love you always</div>
+  <div class="letter">💜 You are my safe place</div>
 
-  <div id="step2" class="step">
-    <img src="https://picsum.photos/400/250?random=12">
-  </div>
-
-  <div id="final" class="step">
-    <h1>💜 I LOVE YOU 💜</h1>
-  </div>
-
+  <button onclick="go('gallery')">Next</button>
 </section>
+
+<!-- GALLERY -->
+<section id="gallery" class="screen">
+  <h2>📸 Gallery</h2>
+
+  <div class="grid">
+    <div>💜 Memory 1</div>
+    <div>💜 Memory 2</div>
+    <div>💜 Memory 3</div>
+  </div>
+
+  <button onclick="go('flowers')">Next</button>
+</section>
+
+<!-- FLOWERS -->
+<section id="flowers" class="screen">
+  <h2>🌸 Flowers</h2>
+
+  <div onclick="flower('carnation')">🌸 Carnation</div>
+  <div onclick="flower('sunflower')">🌻 Sunflower</div>
+
+  <button onclick="go('final')">Next</button>
+</section>
+
+<!-- FINAL -->
+<section id="final" class="screen">
+  <h1>💜 I LOVE YOU 💜</h1>
+  <button onclick="location.reload()">Restart</button>
+</section>
+
+</div>
+
+<!-- ================= POPUP ================= -->
+<div id="popup" class="popup hidden">
+  <div class="popup-card">
+    <h2 id="title"></h2>
+    <p id="msg"></p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>

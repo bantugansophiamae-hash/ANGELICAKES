@@ -1,42 +1,39 @@
-let step = 0;
-const steps = ["step0","step1","step2","final"];
+// ================= QR AUTO UNLOCK =================
+window.onload = function () {
+  const params = new URLSearchParams(window.location.search);
 
-/* 📱 CHECK QR ACCESS */
-function checkQR() {
+  if (params.get("open") === "1") {
+    document.getElementById("qrScreen").style.display = "none";
+    document.getElementById("site").classList.remove("hidden");
+  }
+};
 
-  const urlParams = new URLSearchParams(window.location.search);
-  const key = urlParams.get("key");
+// ================= NAVIGATION =================
+function go(id) {
+  document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+}
 
-  if (key === "love2026") {
-    document.getElementById("qrScreen").classList.remove("active");
-    document.getElementById("curtain").classList.add("active");
+// ================= LETTERS =================
+function showLetter(i) {
+  document.querySelectorAll(".letter").forEach(l => l.classList.remove("active"));
+  document.querySelectorAll(".letter")[i].classList.add("active");
+}
+
+// ================= FLOWERS =================
+function flower(type) {
+  document.getElementById("popup").classList.remove("hidden");
+
+  if (type === "carnation") {
+    document.getElementById("title").innerText = "Carnation 💜";
+    document.getElementById("msg").innerText = "Love & admiration";
+  } else {
+    document.getElementById("title").innerText = "Sunflower 🌻";
+    document.getElementById("msg").innerText = "Happiness & loyalty";
   }
 }
 
-/* 🌸 FLOWER CURTAIN START */
-document.getElementById("curtain").addEventListener("click", () => {
-
-  document.getElementById("curtain").classList.add("hidden");
-  document.getElementById("scene").classList.add("active");
-
-  showStep(0);
-});
-
-/* 🌸 NEXT STEP */
-document.body.addEventListener("click", () => {
-  if (!document.getElementById("scene").classList.contains("active")) return;
-
-  step++;
-  if (step < steps.length) {
-    showStep(step);
-  }
-});
-
-/* 🌸 SHOW STEP */
-function showStep(i) {
-  document.querySelectorAll(".step").forEach(s => s.classList.remove("active"));
-  document.getElementById(steps[i]).classList.add("active");
+// ================= CLOSE POPUP =================
+function closePopup() {
+  document.getElementById("popup").classList.add("hidden");
 }
-
-/* RUN ON LOAD */
-checkQR();

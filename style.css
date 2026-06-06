@@ -1,66 +1,89 @@
 body {
   margin: 0;
   font-family: Arial;
-  background: radial-gradient(circle at top, #1a0b2e, #05010a);
+  background: radial-gradient(circle, #1a0b2e, #05010a);
   color: white;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
-/* SCREEN */
-.screen, .curtain, .scene {
+/* ================= SCREEN ================= */
+.screen {
   height: 100vh;
   display: none;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  text-align: center;
 }
 
-.active {
+.screen.active {
   display: flex;
 }
 
-.hidden {
-  display: none;
-}
-
-/* BOX */
+/* ================= BOX ================= */
 .box {
-  text-align: center;
   background: rgba(255,255,255,0.08);
-  padding: 30px;
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-}
-
-/* QR */
-.qr {
-  width: 180px;
-  margin: 15px 0;
+  padding: 20px;
   border-radius: 15px;
 }
 
-/* FLOWERS */
-.flowers {
-  display: flex;
-  gap: 15px;
+/* ================= QR ================= */
+.qr-box {
+  text-align: center;
 }
 
-.flower {
-  font-size: 50px;
-  animation: float 3s infinite ease-in-out;
-  cursor: pointer;
-}
-
-@keyframes float {
-  0%,100% {transform: translateY(0);}
-  50% {transform: translateY(-10px);}
-}
-
-/* STORY */
-.step {
-  display: none;
-}
-
-.step.active {
+.qr {
+  width: 200px;
+  margin: 15px auto;
   display: block;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(168, 85, 199, 0.5);
+}
+
+/* ================= BUTTON ================= */
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background: #a855c7;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* ================= LETTERS ================= */
+.letter {
+  display: none;
+  margin: 10px;
+}
+
+.letter.active {
+  display: block;
+}
+
+/* ================= GRID ================= */
+.grid {
+  display: flex;
+  gap: 10px;
+}
+
+/* ================= POPUP ================= */
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-card {
+  background: #1a0b2e;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+/* ================= HIDDEN ================= */
+.hidden {
+  display: none !important;
 }
