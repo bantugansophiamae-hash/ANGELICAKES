@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flower QR Surprise 💜</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- 📱 QR ACCESS SCREEN -->
+<section id="qrScreen" class="screen active">
+  <div class="box">
+
+    <h1>🌸 Scan to Unlock</h1>
+
+    <!-- QR CODE IMAGE -->
+    <img src="qr.png" alt="QR Code" class="qr">
+
+    <p>Scan this QR to enter your surprise 💜</p>
+
+  </div>
+</section>
+
+<!-- 🌸 FLOWER CURTAIN -->
+<section id="curtain" class="curtain hidden">
+
+  <h1>Tap to open the flower curtain 🌸</h1>
+
+  <div class="flowers">
+    <div class="flower">🌸</div>
+    <div class="flower">🌻</div>
+    <div class="flower">🌸</div>
+    <div class="flower">🌻</div>
+  </div>
+
+</section>
+
+<!-- 🌸 STORY -->
+<section id="scene" class="scene hidden">
+
+  <div id="step0" class="step active">
+    <h2>💜 Welcome my love</h2>
+  </div>
+
+  <div id="step1" class="step">
+    <p>A memory just for you ✨</p>
+  </div>
+
+  <div id="step2" class="step">
+    <img src="https://picsum.photos/400/250?random=12">
+  </div>
+
+  <div id="final" class="step">
+    <h1>💜 I LOVE YOU 💜</h1>
+  </div>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
